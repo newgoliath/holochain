@@ -38,6 +38,16 @@ In other words, a holochain functions very much **like a blockchain without bott
 
 ## Installation
 
+### Windows Installation Prep
+1. **Install [Windows git](https://git-scm.com/downloads).** Be sure to select the appropriate options so that git is accessible from the Windows command line.
+1. **Install [GnuWin32 make](http://gnuwin32.sourceforge.net/packages/make.htm).** Add C:\Program Files (x86)\GnuWin32\bin to your PATHS directory. (Make sure C:\go\bin is in your PATHS directory already, too).  **ALTERNATIVE: Install [MinGW](http://mingw.org/wiki/Getting_Started).**  This is optional and will give you a GDB debugging environment for your Go work if you use the LiteIDE for Go.
+1. **Add the Paths to access git and make.** Click start and type "Environment variables" until you see the Control Panel option. Select the "Edit system environment variables" option and the window will open.  Click the "Environment Variables" button.  Under "System Variables," click "New..." and put GOPATH as the name, and the path to your Go workspace (usually "c:\Users\<username>\go").  
+1. **Ensure that GOROOT is set** (usually to "C:\Go"). For more information, see [How to Write Go Code](https://golang.org/doc/code.html#GOPATH)
+1. **Add bin directories to PATH.** Double-click PATH under System Variables, and click New in the window that pops up. Add the path to go's bin directory as the value (usually C:\Users\<username>\go\bin). This will allow you to run compiled executables from anywhere in the Windows command line.  Now click New again and add the path to your GnuWin32 (or MinGW) make bin directory (usually C:\Program Files (x86)\GnuWin32\bin).
+1. **Ensure a functioning Command Prompt.** Start a Command Prompt and type ```go version```.  You should see the version of go presented.  Type ```git version``` and you should see the version of git presented. Type ```make -v``` and you should see the version of make presented.  If any of these fail, close your Command Prompt and check your System Environment Variables above.  Then try starting the Command Prompt again, and try again.  Type ```set PATH``` and ```set GO``` to examine the values from the Command Prompt.
+
+### Holochains Installation   
+    
 1. Make sure you have a working environment set up for the Go language version 1.7 or later. [See the installation instructions for Go](http://golang.org/doc/install.html).
 2. Follow their instructions on the above doc page for **exporting** your **$GOPATH** and adding your go/bin directory to your search **PATH** for programs. Almost all installation problems reported, stem from skipping one of these path related steps.
 3. Install the [gx package manager](https://github.com/whyrusleeping/gx):
